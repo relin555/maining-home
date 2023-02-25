@@ -88,6 +88,7 @@ import MyButton from './UI/MyButton.vue'
     font-size: 16px;
     line-height: 19px;
     color: #707070;
+    font-family: 'Inter';
     }
     &__search > input::placeholder{
       font-weight: 500;
@@ -95,6 +96,7 @@ import MyButton from './UI/MyButton.vue'
       line-height: 19px;
       color: #707070;
       margin-left: 20px;
+      font-family: 'Inter';
     }
     &__search > button  {
       position: absolute;

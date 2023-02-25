@@ -11,5 +11,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+  button  {
+    border: none;
+    background: inherit;
+    font-family: 'Mulish', sans-serif;
+  }
 </style>
