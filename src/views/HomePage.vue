@@ -33,6 +33,34 @@
         </div>
       </div>
     </section>
+    <section class="home-hit conteiner">
+      <div class="home-hit__inner">
+        <div class="home-hit__title-wrapper">
+          <h2 class="home-hit__title">хиты продаж</h2>
+          <div class="home-hit__title-img">
+            <img src="@/assets/svg/fire.svg" alt="fire">
+          </div>
+        </div>
+        <p class="home-hit__subtitle">Цена указана в розницу. Больше устройств - больше скидка</p>
+        <div class="home-hit__products">
+          <div class="home-hit__product" v-for="product in products" :key="product.nameProduct">
+            <div class="home-hit__product-img-wrapper">
+              <img class="home-hit__product-img" :src="require(`@/assets/productsImg/${product.img}.png`)" alt="">
+            </div>
+            <h5 class="home-hit__product-subtitle">{{ product.categorie }}</h5>
+            <h4 class="home-hit__product-name">{{ product.nameProduct }}</h4>
+            <div class="home-hit__product-price-wrapper">
+              <h4 class="home-hit__product-price">{{ product.price }} ₽</h4>
+              <img src="@/assets/svg/firePrice.svg" alt="" class="home-hit__price-fire">
+            </div>
+          </div>
+        </div>
+        <div class="home-hit__products-btn-wrapper">
+           <my-button class="home-hit__products-btn">перейти в каталог</my-button>
+        </div>
+       
+      </div>
+    </section>
   </div>
   
 </template>
@@ -50,6 +78,13 @@ import MyButton from '@/components/UI/MyButton.vue'
           { img: 'fork', title: 'Продажа оборудования', subtitle: 'Доставка в любую точку мира Оптовые цены на оборудование Гарантия на все наши товары' },
           { img: 'like', title: 'Размещение на хостинге', subtitle: 'Дата-центры от 3.5 рублей за кВт*ч Майнинг отели по всей России Бесплатная установка оборудования' },
           { img: 'chain', title: 'Подключение к пулу', subtitle: 'Официальные представители ViaBTC Выгодные условия сотрудничества Техподдержка онлайн 24/7' },
+        ],
+        products: [
+          { img: 'pr1', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'Antminer S19 90Th', price: '200500' },
+          { img: 'pr2', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'WhatsMiner M30S++', price: '200500' },
+          { img: 'pr3', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'WhatsMiner M32S', price: '192500' },
+          { img: 'pr4', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'Antminer S19 90Th', price: '200500' },
+          { img: 'pr5', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'WhatsMiner M30S++', price: '200500' },
         ]
       }
     }
@@ -164,6 +199,98 @@ import MyButton from '@/components/UI/MyButton.vue'
       line-height: 15px;
       text-transform: uppercase;
       color: #FFFFFF;
+    }
+  }
+  .home-hit {
+    &__title-wrapper  {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    &__title  {
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 41px;
+      text-transform: uppercase;
+      color: #232323;
+      font-family: 'Mulish', sans-serif;
+    }
+    &__title-img  {
+      margin-left: 28px;
+      height: 56px;
+      width: 56px;
+      background: #F5F5F5;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__subtitle {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #414141;
+      margin-bottom: 20px;
+    }
+    &__products {
+      display: flex;
+    }
+    &__product  {
+      background: #FFFFFF;
+      border: 2px solid #D9D9D9;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-right: 13px;
+      align-items: center;
+      height: 333px;
+      width: 264px;
+    }
+    &__product:last-child {
+      margin-right: 0;
+    }
+    &__product-subtitle {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      color: #B7B7B7;
+    }
+    &__product-name {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 600;
+      font-size: 21px;
+      line-height: 30px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    &__product-price-wrapper  {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    &__product-price  {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 30px;
+      color: #232323;
+      margin-right: 4px;
+    }
+    &__products-btn {
+      background: #7250E6;
+      border-radius: 10px;
+      padding: 20px 48px;
+      margin-top: 36px;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 15px;
+      text-transform: uppercase;
+    }
+    &__products-btn-wrapper {
+      display: flex;
+      justify-content: center;
     }
   }
 </style>
