@@ -61,6 +61,22 @@
        
       </div>
     </section>
+    <section class="home-connect conteiner">
+      <div class="home-connect__inner">
+        <div class="home-connect__title-wrapper">
+          <h2 class="home-connect__title">подключение к пулу на выгодных условиях</h2>
+          <my-button class="home-connect__btn">подключиться к пулу</my-button>
+        </div>
+        <div class="home-connect__list">
+          <div class="home-connect__list-items">
+            <div class="home-connect__list-item" v-for="item in connectItems" :key="item.title">
+              <img :src="require(`@/assets/svg/${item.img}.svg`)" alt="" class="home-connect__item-img">
+              <h4 class="home-connect__item-title">{{ item.title }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
   
 </template>
@@ -85,6 +101,12 @@ import MyButton from '@/components/UI/MyButton.vue'
           { img: 'pr3', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'WhatsMiner M32S', price: '192500' },
           { img: 'pr4', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'Antminer S19 90Th', price: '200500' },
           { img: 'pr5', categorie: 'BITMAIN, ASIC-МАЙНЕРЫ, АСИКИ S19', nameProduct: 'WhatsMiner M30S++', price: '200500' },
+        ],
+        connectItems: [
+          { img: 'hightUptime', title: 'Высокий аптайм' },
+          { img: 'shield', title: 'надежность' },
+          { img: 'support', title: 'техподдержка 24/7' },
+          { img: 'money', title: 'автовывод без комиссии' },
         ]
       }
     }
@@ -202,6 +224,7 @@ import MyButton from '@/components/UI/MyButton.vue'
     }
   }
   .home-hit {
+    margin-bottom: 48px;
     &__title-wrapper  {
       display: flex;
       margin-bottom: 20px;
@@ -291,6 +314,59 @@ import MyButton from '@/components/UI/MyButton.vue'
     &__products-btn-wrapper {
       display: flex;
       justify-content: center;
+    }
+  }
+  .home-connect {
+    &__inner  {
+      background: #232323;
+      border-radius: 10px;
+      padding: 46px 0 59px 81px;
+    }
+    &__title-wrapper  {
+      display: flex;
+      align-items: center;
+      margin-bottom: 61px;
+    }
+    &__title  {
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 41px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      width: 842px;
+    }
+    &__btn  {
+      background: linear-gradient(270deg, #7250E6 0%, #FF5C87 100%);
+      border-radius: 10px;
+      padding: 20px 47px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    &__list-items {
+      margin-left: 2px;
+      display: flex;
+      align-items: center;
+    }
+    &__list-item  {
+      margin-right: 37px;
+      display: flex;
+      align-items: center;
+    }
+    &__list-item:last-child {
+      margin-right: 0;
+    }
+    &__item-img {
+      margin-right: 25px;
+    }
+    &__item-title {
+      font-weight: 600;
+      font-size: 21px;
+      line-height: 34px;
+      text-transform: uppercase;
+      color: #FFFFFF;
     }
   }
 </style>
