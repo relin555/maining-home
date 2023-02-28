@@ -77,6 +77,12 @@
         </div>
       </div>
     </section>
+    <section class="home-partners conteiner">
+      <div class="home-partners__inner">
+        <h2 class="home-partners__title">Мы являемся эксклюзивным партнером</h2>
+        <img src="@/assets/svg/btcLogo.svg" alt="btcLogo">
+      </div>
+    </section>
   </div>
   
 </template>
@@ -317,6 +323,7 @@ import MyButton from '@/components/UI/MyButton.vue'
     }
   }
   .home-connect {
+    margin-bottom: 99px;
     &__inner  {
       background: #232323;
       border-radius: 10px;
@@ -367,6 +374,19 @@ import MyButton from '@/components/UI/MyButton.vue'
       line-height: 34px;
       text-transform: uppercase;
       color: #FFFFFF;
+    }
+  }
+  .home-partners  {
+    background: #F5F5F5;
+    padding: 53px 0;
+    margin-bottom: 80px;
+    &__inner  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__title  {
+      margin-right: 20px;
     }
   }
 </style>
