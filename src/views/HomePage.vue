@@ -101,7 +101,7 @@
       </div>
     </section>
     <section class="home-choice">
-      <div class="homne-choice__inner">
+      <div class="home-choice__inner">
         <div class="home-choice__images-wrapper">
           <img src="@/assets/productsImg/pr6.png" alt="" class="home-choice__img">
           <img src="@/assets/productsImg/pr7.png" alt="" class="home-choice__img">
@@ -109,7 +109,9 @@
         <div class="home-choice__content">
           <h2 class="home-choice__title">Подберем нужный ASIC</h2>
           <h4 class="home-choice__subtitle">Закажите консультацию и мы поможем вам в подборе оборудования</h4>
-          <my-button>заказать консультацию</my-button>
+          <div class="home-choice__btn-wrapper">
+            <my-button>заказать консультацию</my-button>
+          </div>
         </div>
       </div>
     </section>
@@ -491,5 +493,53 @@ import MyButton from '@/components/UI/MyButton.vue'
   .home-choice  {
     background: #232323;
     position: relative;
+    margin-bottom: 80px;
+    &__inner  {
+      padding: 56px 0 65px 0;
+    }
+    &__img  {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+    &__images-wrapper > img:first-child {
+      z-index: 2;
+    }
+    &__content  {
+      margin-left: 560px;
+      display: flex;
+      flex-direction: column;
+    }
+    &__title  {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 41px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    &__subtitle {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29px;
+      color: #FFFFFF;
+      width: 656px;
+      margin-bottom: 48px;
+    }
+    &__btn-wrapper  {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__btn-wrapper > button {
+      padding: 20px 47px;
+      background: linear-gradient(270deg, #7250E6 0%, #FF5C87 100%);
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
   }
 </style>
