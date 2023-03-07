@@ -83,6 +83,36 @@
         <img src="@/assets/svg/btcLogo.svg" alt="btcLogo">
       </div>
     </section>
+    <section class="home-machine-mg conteiner">
+      <div class="home-machine-mg__inner">
+        <h2 class="home-machine-mg__title">подбери свое оборудование для майнинга</h2>
+        <div class="home-machine-mg__items">
+          <div class="home-machine-mg__item" v-for="item in machineItems" :key="item.img">
+            <div class="home-machine-mg__img-wrapper">
+              <img :src="require(`@/assets/svg/${item.img}.svg`)" :alt="item.img" class="home-machine-mg__item-img">
+            </div>
+            <h4 class="home-machine-mg__item-title">{{ item.title }}</h4>
+            <p class="home-machine-mg__item-subtitle">{{ item.subtitle }}</p>
+          </div>
+        </div>
+        <div class="home-machine-mg__btn-wrapper">
+          <my-button>заказать звонок</my-button>
+        </div>
+      </div>
+    </section>
+    <section class="home-choice">
+      <div class="homne-choice__inner">
+        <div class="home-choice__images-wrapper">
+          <img src="@/assets/productsImg/pr6.png" alt="" class="home-choice__img">
+          <img src="@/assets/productsImg/pr7.png" alt="" class="home-choice__img">
+        </div>
+        <div class="home-choice__content">
+          <h2 class="home-choice__title">Подберем нужный ASIC</h2>
+          <h4 class="home-choice__subtitle">Закажите консультацию и мы поможем вам в подборе оборудования</h4>
+          <my-button>заказать консультацию</my-button>
+        </div>
+      </div>
+    </section>
   </div>
   
 </template>
@@ -113,6 +143,12 @@ import MyButton from '@/components/UI/MyButton.vue'
           { img: 'shield', title: 'надежность' },
           { img: 'support', title: 'техподдержка 24/7' },
           { img: 'money', title: 'автовывод без комиссии' },
+        ],
+        machineItems: [
+          { img: 'car', title: 'Удобная доставка', subtitle: 'По всей России и СНГ' },
+          { img: 'dolars', title: 'Оптовые цены', subtitle: 'Работаем с крупными поставщиками' },
+          { img: 'rocket', title: 'Быстрая консультация', subtitle: 'Находимся онлайн 24/7' },
+          { img: 'save', title: 'Гарантия на оборудование', subtitle: 'Действует на все наше оборудование' },
         ]
       }
     }
@@ -388,5 +424,72 @@ import MyButton from '@/components/UI/MyButton.vue'
     &__title  {
       margin-right: 20px;
     }
+  }
+  .home-machine-mg  {
+    &__inner  {
+      margin-bottom: 80px;
+      display: flex;
+      flex-direction: column;
+    }
+    &__title  {
+      font-family: 'Mulish', sans-serif;
+      width: 725px;
+      font-weight: 900;
+      font-size: 38px;
+      line-height: 41px;
+      text-transform: uppercase;
+      color: #232323;
+      margin-bottom: 28px;
+    }
+    &__items  {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 36px;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+    }
+    &__img-wrapper  {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      background: #F5F5F5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    &__item-title {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 29px;
+      color: #232323;
+      margin-bottom: 24px;
+    }
+    &__item-subtitle  {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #707070;
+    }
+    &__btn-wrapper  {
+      display: flex;
+      justify-content: center;
+    }
+    &__inner > &__btn-wrapper > button{
+      background: #7250E6;
+      border-radius: 10px;
+      padding: 20px 48px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+  }
+  .home-choice  {
+    background: #232323;
+    position: relative;
   }
 </style>
